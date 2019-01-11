@@ -1,0 +1,34 @@
+body {
+    width: 477px;
+
+    .task-block {
+        cursor: pointer;
+
+        &.el-card__body {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    .selected-card {
+        background: #f1f1f1;
+    }
+
+    .completed-task-title {
+        text-decoration: line-through;
+    }
+
+    .filter {
+        margin-bottom: 10px;
+        display: flex;
+        justify-content: space-between;
+
+        &.delete {
+            margin: 0;
+        }
+    }
+
+    .task-ckeckbox {
+        text-align: left;
+    }
+}

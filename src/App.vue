@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import('@/styles/style.css');
+import '@/styles/style.scss';
 export default {
     name: 'App'
 };
