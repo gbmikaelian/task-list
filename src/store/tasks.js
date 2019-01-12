@@ -19,12 +19,12 @@ export default {
                     return task.archived;
                 }
             });
-            return tasks.reverse();
+            return tasks;
         }
     },
     mutations: {
         [ADD] (state, data) {
-            state.tasks.push(data);
+            state.tasks.unshift(data);
             state.task = new Task();
         },
         [EDIT] (state) {

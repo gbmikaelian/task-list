@@ -6,13 +6,25 @@
                 <el-radio-button label="completed">Completed</el-radio-button>
                 <el-radio-button label="archive">Archive</el-radio-button>
             </el-radio-group>
-            <el-button
-                :disabled="taskFilter === 'archive'"
-                v-on:click="archive"
-                type="info">
-                    Archive
-            </el-button>
-            <el-button class="delete" v-on:click="remove" type="danger">Delete</el-button>
+            <div>
+                <el-button
+                    v-on:click="create"
+                    type="primary" circle>
+                        <icon icon="plus"/>
+                </el-button>
+                <el-button
+                    :disabled="taskFilter === 'archive'"
+                    v-on:click="archive"
+                    type="info" circle>
+                        <icon icon="archive"/>
+                </el-button>
+                <el-button
+                    class="delete"
+                    v-on:click="remove"
+                    type="danger" circle>
+                        <icon icon="trash-alt"/>
+                </el-button>
+            </div>
         </div>
         <div>
             <el-input
@@ -31,7 +43,26 @@
                                 {{task.name}}
                             </span>
                     </el-checkbox>
-                    <el-badge v-if="task.archived" value="archived" class="item"></el-badge>
+                    <el-badge
+                        v-if="task.archived"
+                        value="archived"
+                        type="info"
+                        class="item">
+                    </el-badge>
+
+                    <el-badge
+                        v-else-if="task.completed"
+                        value="completed"
+                        type="success"
+                        class="item">
+                    </el-badge>
+
+                    <el-badge
+                        v-else
+                        value="pending"
+                        type="primary"
+                        class="item">
+                    </el-badge>
                 </el-card>
                 </div>
             </div>

@@ -4,7 +4,7 @@ body {
     .task-block {
         cursor: pointer;
 
-        &.el-card__body {
+        .el-card__body {
             display: flex;
             justify-content: space-between;
         }
@@ -22,10 +22,6 @@ body {
         margin-bottom: 10px;
         display: flex;
         justify-content: space-between;
-
-        &.delete {
-            margin: 0;
-        }
     }
 
     .task-ckeckbox {
